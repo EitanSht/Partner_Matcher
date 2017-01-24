@@ -1,0 +1,220 @@
+﻿
+------------------------------------- Start Module: app_updater 10/31/15 -------------------------------------
+[01:38:16.90][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegOpenKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[01:38:16.90][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[01:38:16.90][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegOpenKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[01:38:16.90][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[01:38:16.90][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegOpenKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 2
+[01:38:16.90][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastDownloadCfgTime
+[01:38:16.90][0b8c][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[01:38:17.51][0b8c][INF][StatCollector] Begin init connection manager
+[01:38:19.88][0b8c][INF][StatCollector] End init connection manager
+[01:38:19.88][0b8c][INF][StatCollector] Begin init NetConnection
+[01:38:19.94][0b8c][INF][StatCollector] End init NetConnection
+[01:38:31.84][0b8c][INF][StatCollector] File "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[01:38:31.84][0b8c][INF][StatCollector] Upload configuration succeeded, saved in = "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[01:38:31.84][0b8c][INF][StatCollector] Cleanup connection
+[01:38:31.84][0b8c][INF][dvsupdatehelper] Decompress file: "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[01:38:31.84][0b8c][INF][dvsupdatehelper] Download configuration is ok
+[01:38:31.93][0b8c][INF][dvsupdatehelper] XML ["C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[01:38:31.95][0b8c][INF][dvsupdatehelper] updateLastDownloadCfgTime, set time  2015-10-30T23:38:31
+[01:38:31.95][0b8c][INF][dvsupdatehelper] Correct read new configuration , rename cfg file
+[01:40:07.26][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[01:40:07.31][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[01:40:07.31][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[01:40:07.31][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[01:40:07.31][0b8c][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[01:40:07.33][0b8c][INF][StatCollector] Begin init connection manager
+[01:40:07.33][0b8c][INF][StatCollector] ConnectionManager already init
+[01:40:07.33][0b8c][INF][StatCollector] Begin init NetConnection
+[01:40:07.34][0b8c][INF][StatCollector] End init NetConnection
+[01:40:07.52][0b8c][INF][StatCollector] File "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[01:40:07.52][0b8c][INF][StatCollector] Upload configuration succeeded, saved in = "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[01:40:07.52][0b8c][INF][StatCollector] Cleanup connection
+[01:40:07.52][0b8c][INF][dvsupdatehelper] Decompress file: "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[01:40:07.52][0b8c][INF][dvsupdatehelper] Download configuration is ok
+[01:40:07.52][0b8c][INF][dvsupdatehelper] XML ["C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[01:40:07.53][0b8c][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[01:40:07.53][0b8c][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[01:40:07.53][0b8c][ERR][dvsupdatehelper] Error setTime , name = LastDownloadCfgTime time =1446507607
+[01:40:07.53][0b8c][ERR][dvsupdatehelper] Error updateLastDownloadCfgTime , unable set time
+[01:40:07.53][0b8c][INF][dvsupdatehelper] Correct read new configuration , rename cfg file
+[01:41:26.29][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[01:41:26.29][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[01:41:26.29][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[01:41:26.29][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[01:41:26.29][0b8c][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[01:41:26.30][0b8c][INF][StatCollector] Begin init connection manager
+[01:41:26.30][0b8c][INF][StatCollector] ConnectionManager already init
+[01:41:26.30][0b8c][INF][StatCollector] Begin init NetConnection
+[01:41:26.30][0b8c][INF][StatCollector] End init NetConnection
+[01:41:26.66][0b8c][INF][StatCollector] File "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[01:41:26.66][0b8c][INF][StatCollector] Upload configuration succeeded, saved in = "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[01:41:26.66][0b8c][INF][StatCollector] Cleanup connection
+[01:41:26.67][0b8c][INF][dvsupdatehelper] Decompress file: "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[01:41:26.67][0b8c][INF][dvsupdatehelper] Download configuration is ok
+[01:41:26.67][0b8c][INF][dvsupdatehelper] XML ["C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[01:41:26.67][0b8c][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[01:41:26.67][0b8c][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[01:41:26.67][0b8c][ERR][dvsupdatehelper] Error setTime , name = LastDownloadCfgTime time =1446766886
+[01:41:26.67][0b8c][ERR][dvsupdatehelper] Error updateLastDownloadCfgTime , unable set time
+[01:41:26.67][0b8c][INF][dvsupdatehelper] Correct read new configuration , rename cfg file
+[23:20:46.81][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[23:20:46.95][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[23:20:46.95][0b8c][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[23:20:46.95][0b8c][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[23:20:46.97][0b8c][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[23:20:47.14][0b8c][INF][StatCollector] Begin init connection manager
+[23:20:47.14][0b8c][INF][StatCollector] ConnectionManager already init
+[23:20:47.14][0b8c][INF][StatCollector] Begin init NetConnection
+[23:20:47.36][0b8c][INF][StatCollector] End init NetConnection
+[23:20:47.65][0b8c][ERR][DVSStat] Failed to get  WorkPath from the Registry
+[23:20:47.81][0b8c][INF][DVSStat] Add event. Name = dvs_error, Alg = 3, value = Try to receive file from URL: http://tools.dvdvideosoft.com/updates/versions.gz ErrDesc = Could not resolve host: tools.dvdvideosoft.com
+[23:20:48.03][0b8c][ERR][StatCollector] curl_errbuf = Could not resolve host: tools.dvdvideosoft.com
+[23:20:48.15][0b8c][ERR][StatCollector] curl_easy_perform() failed:Couldn't resolve host name
+[23:20:48.28][0b8c][ERR][StatCollector] Can't upload configuration
+[23:20:48.28][0b8c][INF][StatCollector] Cleanup connection
+[23:20:48.28][0b8c][ERR][dvsupdatehelper] Unable download configuration , use old configuration
+[23:20:48.37][0b8c][INF][dvsupdatehelper] XML ["C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions.xml"] parsed without errors
+[23:20:48.37][0b8c][INF][dvsupdatehelper] Correct read old configuration
+[21:42:13.56][08bc][INF][StatCollector] Cleanup connection manager
+------------------------------------- Stop Module: app_updater 11/12/15 -------------------------------------
+
+﻿
+------------------------------------- Start Module: app_updater 11/12/15 -------------------------------------
+[21:44:52.97][0c38][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[21:44:52.97][0c38][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[21:44:52.97][0c38][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[21:44:52.97][0c38][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[21:44:52.97][0c38][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[21:44:53.22][0c38][INF][StatCollector] Begin init connection manager
+[21:44:54.64][0c38][INF][StatCollector] End init connection manager
+[21:44:54.64][0c38][INF][StatCollector] Begin init NetConnection
+[21:44:55.08][0c38][INF][StatCollector] End init NetConnection
+[21:44:55.92][0c38][INF][DVSStat] Dir not exist , create "C:\WINDOWS\system32\config\s"
+[21:44:56.14][0c38][INF][DVSStat] Add event. Name = dvs_error, Alg = 3, value = Try to receive file from URL: http://tools.dvdvideosoft.com/updates/versions.gz ErrDesc = Could not resolve host: tools.dvdvideosoft.com
+[21:44:56.42][0c38][ERR][StatCollector] curl_errbuf = Could not resolve host: tools.dvdvideosoft.com
+[21:44:56.42][0c38][ERR][StatCollector] curl_easy_perform() failed:Couldn't resolve host name
+[21:44:56.42][0c38][ERR][StatCollector] Can't upload configuration
+[21:44:56.42][0c38][INF][StatCollector] Cleanup connection
+[21:44:56.42][0c38][ERR][dvsupdatehelper] Unable download configuration , use old configuration
+[21:44:56.69][0c38][INF][dvsupdatehelper] XML ["C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions.xml"] parsed without errors
+[21:44:56.69][0c38][INF][dvsupdatehelper] Correct read old configuration
+[04:40:23.58][0904][INF][StatCollector] Cleanup connection manager
+------------------------------------- Stop Module: app_updater 11/14/15 -------------------------------------
+
+﻿
+------------------------------------- Start Module: app_updater 11/14/15 -------------------------------------
+[04:43:38.68][0d00][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[04:43:38.68][0d00][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[04:43:38.68][0d00][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[04:43:38.68][0d00][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[04:43:38.68][0d00][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[04:43:39.08][0d00][INF][StatCollector] Begin init connection manager
+[04:43:43.76][0d00][INF][StatCollector] End init connection manager
+[04:43:43.76][0d00][INF][StatCollector] Begin init NetConnection
+[04:43:43.90][0d00][INF][StatCollector] End init NetConnection
+[04:43:46.09][0d00][INF][StatCollector] File "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[04:43:46.09][0d00][INF][StatCollector] Upload configuration succeeded, saved in = "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[04:43:46.09][0d00][INF][StatCollector] Cleanup connection
+[04:43:46.09][0d00][INF][dvsupdatehelper] Decompress file: "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[04:43:46.09][0d00][INF][dvsupdatehelper] Download configuration is ok
+[04:43:46.13][0d00][INF][dvsupdatehelper] XML ["C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[04:43:46.13][0d00][INF][dvsupdatehelper] updateLastDownloadCfgTime, set time  2015-11-14T02:43:46
+[04:43:46.13][0d00][INF][dvsupdatehelper] Correct read new configuration , rename cfg file
+[04:45:07.22][0d00][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[04:45:07.29][0d00][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[04:45:07.29][0d00][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[04:45:07.29][0d00][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[04:45:07.30][0d00][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[04:45:07.41][0d00][INF][StatCollector] Begin init connection manager
+[04:45:07.41][0d00][INF][StatCollector] ConnectionManager already init
+[04:45:07.41][0d00][INF][StatCollector] Begin init NetConnection
+[04:45:07.44][0d00][INF][StatCollector] End init NetConnection
+[04:45:08.08][0d00][INF][StatCollector] File "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[04:45:08.09][0d00][INF][StatCollector] Upload configuration succeeded, saved in = "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[04:45:08.09][0d00][INF][StatCollector] Cleanup connection
+[04:45:08.09][0d00][INF][dvsupdatehelper] Decompress file: "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[04:45:08.16][0d00][INF][dvsupdatehelper] Download configuration is ok
+[04:45:08.16][0d00][INF][dvsupdatehelper] XML ["C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[04:45:08.16][0d00][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[04:45:08.16][0d00][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[04:45:08.16][0d00][ERR][dvsupdatehelper] Error setTime , name = LastDownloadCfgTime time =1447728308
+[04:45:08.16][0d00][ERR][dvsupdatehelper] Error updateLastDownloadCfgTime , unable set time
+[04:45:08.16][0d00][INF][dvsupdatehelper] Correct read new configuration , rename cfg file
+[04:46:18.10][0d00][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[04:46:18.10][0d00][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[04:46:18.10][0d00][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[04:46:18.10][0d00][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[04:46:18.10][0d00][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[04:46:18.12][0d00][INF][StatCollector] Begin init connection manager
+[04:46:18.12][0d00][INF][StatCollector] ConnectionManager already init
+[04:46:18.12][0d00][INF][StatCollector] Begin init NetConnection
+[04:46:18.12][0d00][INF][StatCollector] End init NetConnection
+[04:46:18.32][0d00][INF][StatCollector] File "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[04:46:18.32][0d00][INF][StatCollector] Upload configuration succeeded, saved in = "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[04:46:18.32][0d00][INF][StatCollector] Cleanup connection
+[04:46:18.32][0d00][INF][dvsupdatehelper] Decompress file: "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[04:46:18.32][0d00][INF][dvsupdatehelper] Download configuration is ok
+[04:46:18.32][0d00][INF][dvsupdatehelper] XML ["C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[04:46:18.32][0d00][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[04:46:18.32][0d00][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[04:46:18.32][0d00][ERR][dvsupdatehelper] Error setTime , name = LastDownloadCfgTime time =1447987578
+[04:46:18.32][0d00][ERR][dvsupdatehelper] Error updateLastDownloadCfgTime , unable set time
+[04:46:18.32][0d00][INF][dvsupdatehelper] Correct read new configuration , rename cfg file
+﻿
+------------------------------------- Start Module: app_updater 11/23/15 -------------------------------------
+[07:49:59.22][0b28][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[07:49:59.22][0b28][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[07:49:59.22][0b28][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[07:49:59.22][0b28][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[07:49:59.25][0b28][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[07:49:59.58][0b28][INF][StatCollector] Begin init connection manager
+[07:50:01.60][0b28][INF][StatCollector] End init connection manager
+[07:50:01.60][0b28][INF][StatCollector] Begin init NetConnection
+[07:50:01.63][0b28][INF][StatCollector] End init NetConnection
+[07:50:03.51][0b28][INF][DVSStat] Add event. Name = dvs_error, Alg = 3, value = Try to receive file from URL: http://tools.dvdvideosoft.com/updates/versions.gz ErrDesc = Could not resolve host: tools.dvdvideosoft.com
+[07:50:03.57][0b28][ERR][StatCollector] curl_errbuf = Could not resolve host: tools.dvdvideosoft.com
+[07:50:03.57][0b28][ERR][StatCollector] curl_easy_perform() failed:Couldn't resolve host name
+[07:50:03.57][0b28][ERR][StatCollector] Can't upload configuration
+[07:50:03.57][0b28][INF][StatCollector] Cleanup connection
+[07:50:03.57][0b28][ERR][dvsupdatehelper] Unable download configuration , use old configuration
+[07:50:03.84][0b28][INF][dvsupdatehelper] XML ["C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions.xml"] parsed without errors
+[07:50:03.84][0b28][INF][dvsupdatehelper] Correct read old configuration
+[10:25:17.52][0b28][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[10:25:17.58][0b28][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[10:25:17.58][0b28][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[10:25:17.58][0b28][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[10:25:17.61][0b28][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[10:25:17.74][0b28][INF][StatCollector] Begin init connection manager
+[10:25:17.74][0b28][INF][StatCollector] ConnectionManager already init
+[10:25:17.74][0b28][INF][StatCollector] Begin init NetConnection
+[10:25:18.02][0b28][INF][StatCollector] End init NetConnection
+[10:25:21.28][0b28][INF][StatCollector] File "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[10:25:21.28][0b28][INF][StatCollector] Upload configuration succeeded, saved in = "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[10:25:21.28][0b28][INF][StatCollector] Cleanup connection
+[10:25:21.28][0b28][INF][dvsupdatehelper] Decompress file: "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[10:25:21.87][0b28][INF][dvsupdatehelper] Download configuration is ok
+[10:25:21.96][0b28][INF][dvsupdatehelper] XML ["C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[10:25:21.98][0b28][INF][dvsupdatehelper] updateLastDownloadCfgTime, set time  2015-11-27T08:25:21
+[10:25:21.98][0b28][INF][dvsupdatehelper] Correct read new configuration , rename cfg file
+[10:26:52.76][0b28][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastUploadTime', result = 2
+[10:26:52.76][0b28][ERR][dvsupdatehelper] Error getTime , name = LastUploadTime
+[10:26:52.76][0b28][ERR][dvsupdatehelper] CRegApi::regRead(int64_t) , Error RegQueryValueExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastCollectLogTime', result = 2
+[10:26:52.76][0b28][ERR][dvsupdatehelper] Error getTime , name = LastCollectLogTime
+[10:26:52.76][0b28][INF][dvsupdatehelper] isNeedDownloadCfg = 1
+[10:26:52.78][0b28][INF][StatCollector] Begin init connection manager
+[10:26:52.78][0b28][INF][StatCollector] ConnectionManager already init
+[10:26:52.78][0b28][INF][StatCollector] Begin init NetConnection
+[10:26:52.78][0b28][INF][StatCollector] End init NetConnection
+[10:26:53.11][0b28][INF][StatCollector] File "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz" received correctly 
+[10:26:53.11][0b28][INF][StatCollector] Upload configuration succeeded, saved in = "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[10:26:53.11][0b28][INF][StatCollector] Cleanup connection
+[10:26:53.11][0b28][INF][dvsupdatehelper] Decompress file: "C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml.gz"
+[10:26:53.11][0b28][INF][dvsupdatehelper] Download configuration is ok
+[10:26:53.11][0b28][INF][dvsupdatehelper] XML ["C:\Users\Eitan\AppData\Roaming\DVDVideoSoft\Stat\cfg\versions_tmp.xml"] parsed without errors
+[10:26:53.11][0b28][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[10:26:53.11][0b28][ERR][dvsupdatehelper] CRegApi::regWrite(int64_t) , Error RegCreateKeyExA : path='SOFTWARE\DVDVideoSoft\DVSService' , val ='LastDownloadCfgTime', result = 5
+[10:26:53.11][0b28][ERR][dvsupdatehelper] Error setTime , name = LastDownloadCfgTime time =1448872013
+[10:26:53.11][0b28][ERR][dvsupdatehelper] Error updateLastDownloadCfgTime , unable set time
+[10:26:53.11][0b28][INF][dvsupdatehelper] Correct read new configuration , rename cfg file

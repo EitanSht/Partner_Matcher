@@ -1,0 +1,44 @@
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.exe.config
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.exe
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.pdb
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.csprojResolveAssemblyReference.cache
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\App.g.cs
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_MarkupCompile.cache
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_MarkupCompile.lref
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.g.resources
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.Properties.Resources.resources
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.csproj.GenerateResource.Cache
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.exe
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.pdb
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\MainWindow.g.cs
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\MainWindow.baml
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\AddUser.g.cs
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\AddUser.baml
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\bin\Debug\DataSource.accdb
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_Content.g.cs
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\LoginWindow.g.cs
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\LoginWindow.baml
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\SearchWindow.g.cs
+C:\Users\Eitan\Dropbox\Engineering\= שנה ג\ניתוח ועיצוב מערכות מידע\מטלות\מטלה 3 - מימוש\PartnerMatcher\PartnerMatcher\obj\Debug\View\SearchWindow.baml
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.exe.config
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.exe
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.pdb
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.csprojResolveAssemblyReference.cache
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\LoginWindow.g.cs
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\MainWindow.g.cs
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\SearchWindow.g.cs
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\App.g.cs
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_Content.g.cs
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_MarkupCompile.cache
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_MarkupCompile.lref
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\bin\Debug\DataSource.accdb
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.exe
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.pdb
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\LoginWindow.baml
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\MainWindow.baml
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\SearchWindow.baml
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.g.resources
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.Properties.Resources.resources
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.csproj.GenerateResource.Cache
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\W_AddUser.g.cs
+C:\Users\user\OneDrive\לימודים\ניתוח ועיצוב מערכות מידע\4b\PartnerMatcher\PartnerMatcher\obj\Debug\View\W_AddUser.baml

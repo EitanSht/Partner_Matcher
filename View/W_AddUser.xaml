@@ -1,0 +1,239 @@
+﻿<Window x:Class="PartnerMatcher.View.W_AddUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:PartnerMatcher.View"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Add a new user"
+        Width="600"
+        Height="550"
+        Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="../Graphics/Green_BG.jpg" />
+    </Window.Background>
+    <Border BorderBrush="Black" BorderThickness="4">
+        <Grid Margin="0,0,0,0">
+            <GroupBox x:Name="actions_groupbox"
+                      Width="334"
+                      Height="57"
+                      Margin="126,369,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FontWeight="Bold"
+                      Foreground="#FFF5DC64"
+                      Header="Actions" />
+            <TextBlock Width="590"
+                       Margin="-4,2,-2,0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="Wheat"
+                       Text="Insert New User Details"
+                       TextAlignment="Center"
+                       TextDecorations="{x:Null}" />
+            <Button x:Name="exitButton"
+                    Width="584"
+                    Margin="0,426,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="exitButton_Click"
+                    Content="Back"
+                    FontSize="30">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="FontWeight" Value="Normal" />
+                        <Setter Property="Foreground" Value="Red" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Foreground" Value="Red" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Label x:Name="checkConnection"
+                   Margin="366,441,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content=""
+                   Foreground="#FFAEFF00" />
+            <GroupBox x:Name="userDetailsGroupBox"
+                      Width="334"
+                      Height="323"
+                      Margin="126,41,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      BorderBrush="#FF8AB3CB"
+                      FontWeight="Bold"
+                      Foreground="#FFF5DC64"
+                      Header="User Details">
+                <TextBox x:Name="firstName_txt"
+                         Width="165"
+                         Height="23"
+                         Margin="139,10,0,0"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top"
+                         VerticalContentAlignment="Center"
+                         TextChanged="userName_txt_TextChanged"
+                         TextWrapping="Wrap" />
+            </GroupBox>
+            <Label x:Name="firstName_lbl"
+                   Margin="141,63,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="First Name"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <Label x:Name="gender_lbl"
+                   Margin="141,190,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Gender"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <Label x:Name="birthDate_lbl"
+                   Margin="141,219,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Birth Date"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <Label x:Name="phoneNumber_lbl"
+                   Margin="141,250,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Phone Number"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <Label x:Name="address_lbl"
+                   Margin="141,280,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Address"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <Label x:Name="password_lbl"
+                   Margin="141,157,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Password"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <TextBox x:Name="phoneNumber_txt"
+                     Width="165"
+                     Height="23"
+                     Margin="271,254,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     VerticalContentAlignment="Center"
+                     TextChanged="userName_txt_TextChanged"
+                     TextWrapping="Wrap" />
+            <TextBox x:Name="address_txt"
+                     Width="165"
+                     Height="23"
+                     Margin="271,284,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     VerticalContentAlignment="Center"
+                     TextChanged="userName_txt_TextChanged"
+                     TextWrapping="Wrap" />
+            <DatePicker x:Name="date_btn"
+                        Width="165"
+                        Margin="271,222,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        DisplayDate="1990-01-07"
+                        SelectedDateFormat="Short" />
+            <ComboBox x:Name="gender_box"
+                      Width="165"
+                      Margin="271,194,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top">
+                <ComboBoxItem Content="Select Gender" Selector.IsSelected="True" />
+                <ComboBoxItem Content="Male" />
+                <ComboBoxItem Content="Female" />
+            </ComboBox>
+            <Button x:Name="submit_btn"
+                    Width="145"
+                    Height="28"
+                    Margin="291,388,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="submit_btn_Click"
+                    Content="Submit"
+                    FontSize="16"
+                    FontWeight="Bold" />
+            <Button x:Name="clear_btn"
+                    Width="133"
+                    Height="28"
+                    Margin="145,388,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="clear_btn_Click"
+                    Content="Clear"
+                    FontSize="16"
+                    FontWeight="Bold" />
+            <PasswordBox x:Name="password_txt"
+                         Width="164"
+                         Height="23"
+                         Margin="272,161,0,0"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top" />
+            <Label x:Name="email_lbl"
+                   Margin="141,126,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="E-Mail"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <TextBox x:Name="email_txt"
+                     Width="165"
+                     Height="23"
+                     Margin="271,130,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     VerticalContentAlignment="Center"
+                     TextChanged="userName_txt_TextChanged"
+                     TextWrapping="Wrap" />
+            <Label x:Name="lastName_lbl"
+                   Margin="141,94,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Last Name"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <TextBox x:Name="lastName_txt"
+                     Width="165"
+                     Height="23"
+                     Margin="271,98,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     VerticalContentAlignment="Center"
+                     TextChanged="userName_txt_TextChanged"
+                     TextWrapping="Wrap" />
+            <Button x:Name="uploadCV_btn"
+                    Width="291"
+                    Height="31"
+                    Margin="145,320,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Upload CV (Optional)"
+                    FontWeight="Bold" Click="uploadCV_btn_Click" />
+        </Grid>
+    </Border>
+</Window>
