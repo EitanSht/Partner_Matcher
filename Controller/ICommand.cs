@@ -7,11 +7,10 @@
     /// </summary>
     public interface ICommand
     {
-
         bool DoCommand(params string[] parameters);
 
         string checkParams(string[] param);
-        string GetName();
 
+        string GetName();
     }
 }

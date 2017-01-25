@@ -1,6 +1,5 @@
 ﻿using PartnerMatcher.Controller;
 using System;
-using System.Data.OleDb;
 using System.Windows;
 
 namespace PartnerMatcher.View
@@ -10,7 +9,6 @@ namespace PartnerMatcher.View
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private OleDbConnection connection;
         private ICommand m_cmd;
 
         public LoginWindow(ICommand cmd)
@@ -18,15 +16,6 @@ namespace PartnerMatcher.View
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             m_cmd = cmd;
-            //controller.SetView(this);
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            // TODO: למה לא להתחבר לשרת ברגע שמעלים את התכנית??
-
-
-
         }
 
         private void exitButton_Click(object sender, RoutedEventArgs e)
@@ -51,13 +40,6 @@ namespace PartnerMatcher.View
                 return;
             }
         }
-
-
-
-
-
-
-
 
         private void clear_btn_Click(object sender, RoutedEventArgs e)
         {

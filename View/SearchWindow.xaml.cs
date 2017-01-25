@@ -1,9 +1,7 @@
 ﻿using PartnerMatcher.Controller;
-using PartnerMatcher.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.OleDb;
 using System.Windows;
 
 namespace PartnerMatcher.View
@@ -13,7 +11,6 @@ namespace PartnerMatcher.View
     /// </summary>
     public partial class SearchWindow : Window
     {
-        private OleDbConnection connection;
         private DataTable dt;
         private string loggedUserID;
         private MyController m_cont;
@@ -36,19 +33,10 @@ namespace PartnerMatcher.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-
             foreach (string field in m_fields)
             {
-
-
                 field_comboBox.Items.Add(field);
             }
-
-
-
-
-
         }
 
         //Display records in grid
@@ -71,12 +59,10 @@ namespace PartnerMatcher.View
                     lblCount.Visibility = Visibility.Visible;
                     dataGrid.Visibility = Visibility.Hidden;
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.ToString(), "Error Message");
-
             }
         }
 
@@ -101,8 +87,5 @@ namespace PartnerMatcher.View
                 BindGrid();
             }
         }
-
-
     }
 }
-

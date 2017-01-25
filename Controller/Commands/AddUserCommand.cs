@@ -1,23 +1,17 @@
 ﻿using PartnerMatcher.Model;
 using PartnerMatcher.View;
 using System;
-using System.Collections.Generic;
 using System.Data.OleDb;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PartnerMatcher.Controller
 {
-    class AddUserCommand : ACommand
+    internal class AddUserCommand : ACommand
     {
-        private OleDbConnection connection;
-
         #region model methods
+
         public AddUserCommand(IModel model, IView view) : base(model, view)
         {
-
         }
 
         public bool addNewUser(string email, string fname, string lname, string password, string gender, string bday, string phoneNumber, string address, string AuthPass)
@@ -25,21 +19,17 @@ namespace PartnerMatcher.Controller
             return m_model.addNewUser(email, fname, lname, password, gender, bday, phoneNumber, address, AuthPass);
         }
 
-
-
         public void addUserCV(string path, string email)
         {
             try
             {
                 m_model.addUserCV(path, email);
-
             }
             catch
             {
                 m_view.Output("There was problem to upload your CV please contact out customer service : 1-800-harta");
             }
         }
-
 
         /// <summary>
         /// check if user name exits on data base
@@ -48,8 +38,6 @@ namespace PartnerMatcher.Controller
         /// <returns>true if exists</returns>
         public bool checkIfUserExists(string email)
         {
-
-
             if (m_model.checkIfUserExists(email))
             {
                 m_view.Output("User Name Already Exists", "Duplication Error");
@@ -57,15 +45,12 @@ namespace PartnerMatcher.Controller
                 return false;
             }
             return true;
-
         }
-
 
         public override bool DoCommand(params string[] parameters)
         {
             if (checkIfUserExists(parameters[0]))
             {
-
                 string pass = "";
 
                 pass = GenerateRandomPass();
@@ -79,19 +64,11 @@ namespace PartnerMatcher.Controller
 
                 m_view.Output("New user added \n You authentication password for actions on site  is : " + pass + "\n PLEASE WRITE IT DOWN FOR FUTURE USE", "Submitted Successfully");
 
-
                 return true;
-
             }
-
             else
                 return false;
         }
-
-
-
-
-
 
         public override string checkParams(string[] param)
         {
@@ -102,12 +79,10 @@ namespace PartnerMatcher.Controller
         {
             return "AddUser";
         }
-        #endregion
 
-
+        #endregion model methods
 
         #region controller implementes
-
 
         private static string GenerateRandomPass()
         {
@@ -118,9 +93,6 @@ namespace PartnerMatcher.Controller
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-
-
-
-        #endregion
+        #endregion controller implementes
     }
 }

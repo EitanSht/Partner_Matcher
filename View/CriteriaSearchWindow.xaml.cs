@@ -2,18 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PartnerMatcher.View
 {
@@ -26,10 +15,9 @@ namespace PartnerMatcher.View
         private string loggedUserID;
         private MyController m_controller;
 
-        string m_user;
-        List<string> m_fields;
-        Dictionary<Tuple<string, string>, string[]> m_criteriaDetails;
-
+        private string m_user;
+        private List<string> m_fields;
+        private Dictionary<Tuple<string, string>, string[]> m_criteriaDetails;
 
         public CriteriaSearchWindow(string loggedUser, List<string> fields, Dictionary<Tuple<string, string>, string[]> criteriaDetails, MyController controller)
         {
@@ -40,7 +28,6 @@ namespace PartnerMatcher.View
             m_criteriaDetails = criteriaDetails;
             m_user = loggedUser;
             m_controller = controller;
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -50,17 +37,11 @@ namespace PartnerMatcher.View
             {
                 field_comboBox.Items.Add(f);
             }
-
         }
-
-
-
 
         //Display records in grid
         private void BindGrid()
         {
-
-
             object[] critDat = new object[] { lbl_0.Content, lbl_1.Content, lbl_2.Content, lbl_3.Content, criteria_0_box.Text, criteria_1_box.Text, criteria_2_box.Text, criteria_3_box.Text };
 
             //set tabke name - TRICK
@@ -82,11 +63,7 @@ namespace PartnerMatcher.View
                 results_groupbox.Visibility = Visibility.Hidden;
                 dataGrid.Visibility = Visibility.Hidden;
             }
-
-
         }
-
-
 
         private void clear_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -162,6 +139,7 @@ namespace PartnerMatcher.View
                                 }
                                 i++;
                                 break;
+
                             case 1:
                                 lbl_1.Content = t.Item2;
                                 foreach (var str in subC)
@@ -170,6 +148,7 @@ namespace PartnerMatcher.View
                                 }
                                 i++;
                                 break;
+
                             case 2:
                                 lbl_2.Content = t.Item2;
                                 foreach (var str in subC)
@@ -178,6 +157,7 @@ namespace PartnerMatcher.View
                                 }
                                 i++;
                                 break;
+
                             case 3:
                                 lbl_3.Content = t.Item2;
                                 foreach (var str in subC)
@@ -189,7 +169,6 @@ namespace PartnerMatcher.View
                         }
                     }
                 }
-
             }
         }
     }

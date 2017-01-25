@@ -10,8 +10,6 @@ namespace PartnerMatcher
     /// </summary>
     public partial class App : Application
     {
-
-
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             IController c = new MyController();
@@ -23,7 +21,6 @@ namespace PartnerMatcher
             Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
             Current.MainWindow = (MainWindow)v;
             v.Start();
-
         }
     }
 }

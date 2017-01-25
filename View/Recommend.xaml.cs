@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PartnerMatcher.View
 {
@@ -20,9 +10,8 @@ namespace PartnerMatcher.View
     public partial class Recommend : Window
     {
         private string m_selcet_field = "";
-        string m_userEmail = "";
-        Controller.IController m_controller;
-
+        private string m_userEmail = "";
+        private Controller.IController m_controller;
 
         public string SelectefField
         {
@@ -38,9 +27,7 @@ namespace PartnerMatcher.View
             }
             m_userEmail = userEmail;
             m_controller = controller;
-
         }
-
 
         /// <summary>
         /// When the user select the item from the combox list

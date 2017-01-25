@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         Title="Recommend" Height="697" Width="404">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="30" Margin="20,20,0,0" TextWrapping="Wrap" Text="Choose Field from the list below" VerticalAlignment="Top" Width="260"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="25" Margin="20,50,0,0" VerticalAlignment="Top" Width="365" SelectionChanged="comboBox_SelectionChanged"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="300" Margin="20,145,0,0" VerticalAlignment="Top" Width="360" Visibility="Hidden"/>
-        <Button x:Name="button" Content="Ok" IsEnabled="False" HorizontalAlignment="Left" Height="35" Margin="85,90,0,0" VerticalAlignment="Top" Width="185" Click="button_Click"/>
-
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="30" Margin="20,20,0,0" TextWrapping="Wrap" Text="Choose Field from the list below" VerticalAlignment="Top" Width="260" />
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="25" Margin="20,50,0,0" VerticalAlignment="Top" Width="365" SelectionChanged="comboBox_SelectionChanged" />
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="300" Margin="20,145,0,0" VerticalAlignment="Top" Width="360" Visibility="Hidden" />
+        <Button x:Name="button" Content="Ok" IsEnabled="False" HorizontalAlignment="Left" Height="35" Margin="85,90,0,0" VerticalAlignment="Top" Width="185" Click="button_Click" />
     </Grid>
 </Window>

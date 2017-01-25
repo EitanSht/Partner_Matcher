@@ -1,10 +1,9 @@
-﻿using PartnerMatcher.View;
+﻿using PartnerMatcher.Controller;
+using PartnerMatcher.View;
 using System;
+using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Windows;
-using PartnerMatcher.Controller;
-using System.Collections.Generic;
-using PartnerMatcher.Model;
 
 namespace PartnerMatcher
 {
@@ -14,10 +13,10 @@ namespace PartnerMatcher
     public partial class MainWindow : Window, IView
     {
         private OleDbConnection connection;
-        IController m_controller;
-        string m_curUser = "";
+        private IController m_controller;
+        private string m_curUser = "";
 
-        Dictionary<string, ICommand> m_CommandDic;//holds the controller commands
+        private Dictionary<string, ICommand> m_CommandDic;//holds the controller commands
         //DataTable dataTable;
 
         public MainWindow(IController c)
@@ -27,6 +26,7 @@ namespace PartnerMatcher
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             m_controller = c;
         }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
@@ -58,15 +58,13 @@ namespace PartnerMatcher
 
             if (m_curUser != "")
             {
-
-                Menu mune = new Menu(m_CommandDic, (MyController)m_controller, m_curUser);
                 loginWin.Close();
+                Menu mune = new Menu(m_CommandDic, (MyController)m_controller, m_curUser);
                 mune.ShowDialog();
-
+                m_curUser = "";
             }
-            this.ShowDialog();
-
-
+            this.Show();
+            //System.Windows.Application.Current.Shutdown();
         }
 
         private void addUserbtn_Click(object sender, RoutedEventArgs e)
@@ -74,16 +72,13 @@ namespace PartnerMatcher
             W_AddUser addUser = new W_AddUser(m_CommandDic["AddUser"]);
             this.Hide();
             addUser.ShowDialog();
-
             this.ShowDialog();
         }
 
         void IView.Start()
         {
             GetCommands();
-
             this.ShowDialog();
-
         }
 
         /// <summary>

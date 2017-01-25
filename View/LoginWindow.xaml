@@ -7,7 +7,6 @@
         Title="Login"
         Width="400"
         Height="280"
-        Loaded="Window_Loaded"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <Window.Background>

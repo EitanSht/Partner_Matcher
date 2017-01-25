@@ -10,12 +10,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="100" />
-        </Grid.ColumnDefinitions >
-        <Grid.RowDefinitions
-            >
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions >
+        </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="0" Text="   AD ID   " ></TextBlock>
         <TextBlock Grid.Column="1" Text="   STATUS  "></TextBlock>

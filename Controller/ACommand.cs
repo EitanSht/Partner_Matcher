@@ -1,21 +1,12 @@
 ﻿using PartnerMatcher.Model;
 using PartnerMatcher.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 
 namespace PartnerMatcher.Controller
 {
-    abstract class ACommand : ICommand
+    internal abstract class ACommand : ICommand
     {
-
         protected IModel m_model;
         protected IView m_view;
-
 
         public ACommand(IModel model, IView view)
         {
@@ -29,7 +20,9 @@ namespace PartnerMatcher.Controller
         /// <param name="param">params to be check</param>
         /// <returns>true if satsified false if not </returns>
         public abstract string checkParams(string[] param);//check the params recieved in Do command
+
         public abstract bool DoCommand(params string[] parameters);
+
         public abstract string GetName();
     }
 }

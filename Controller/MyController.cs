@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PartnerMatcher.Controller.Commands;
 using PartnerMatcher.Model;
 using PartnerMatcher.View;
-using PartnerMatcher.Controller.Commands;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace PartnerMatcher.Controller
@@ -20,9 +17,6 @@ namespace PartnerMatcher.Controller
         {
             dic_command = new Dictionary<string, ICommand>();
         }
-
-
-
 
         /// <summary>
         /// Set model to the controller
@@ -47,8 +41,6 @@ namespace PartnerMatcher.Controller
             return m_model.AdSearch(field);
         }
 
-
-
         /// <summary>
         /// Return the commands dictionary
         /// </summary>
@@ -56,25 +48,25 @@ namespace PartnerMatcher.Controller
         public Dictionary<string, ICommand> GetCommands()
         {
             #region commandsDeclaration
+
             AddUserCommand addUs = new AddUserCommand(m_model, m_view);
             UserLoginCommand logUs = new UserLoginCommand(m_model, m_view);
             AdSearchCommand searchAd = new AdSearchCommand(m_model, m_view);
 
-            #endregion
+            #endregion commandsDeclaration
 
             #region commandDicAddition
+
             dic_command.Add(addUs.GetName(), addUs);
             dic_command.Add(logUs.GetName(), logUs);
             dic_command.Add(searchAd.GetName(), searchAd);
 
             //  dic_command.Add(exit.GetName(), exit);
-            #endregion
+
+            #endregion commandDicAddition
 
             return dic_command;
         }
-
-
-
 
         /// <summary>
         /// Call to the view, following a change in the model
@@ -99,7 +91,6 @@ namespace PartnerMatcher.Controller
         {
             return m_model.AdRecommend(userid, field);
         }
-
 
         public List<string> GetRequest(string userid)
         {

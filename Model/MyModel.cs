@@ -1,12 +1,9 @@
 ﻿using PartnerMatcher.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.IO;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Threading;
-using System.Data;
 
 /// <summary>
 /// This class implement Imodel interface
@@ -14,32 +11,22 @@ using System.Data;
 /// </summary>
 namespace PartnerMatcher.Model
 {
-
     internal class MyModel : IModel
     {
-
         private OleDbConnection connection;
 
         private IController m_controller;
 
-
         public MyModel(IController cont)
         {
-
             m_controller = cont;
 
             connection = new OleDbConnection();
             connection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=DataSource.accdb; Persist Security Info=False";
-
-
-
         }
 
-
-
-
-
         #region ADD USER
+
         public bool checkIfUserExists(string email)
         {
             bool ans;
@@ -52,17 +39,12 @@ namespace PartnerMatcher.Model
             ans = (int)checkCommand.ExecuteScalar() > 0;
             connection.Close();
             return ans;
-
-
         }
-
-
 
         public bool addNewUser(string email, string fname, string lname, string password, string gender, string bday, string phoneNumber, string address, string AuthPass)
         {
             try
             {
-
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
@@ -85,18 +67,13 @@ namespace PartnerMatcher.Model
 
         public void addUserCV(string path, string email)
         {
-
             if (File.Exists(path))
             {
                 File.Copy(path, ".\\CV\\" + email + ".doc");
             }
-
         }
 
-        #endregion
-
-
-
+        #endregion ADD USER
 
         public bool UserLogin(string userName, string password)
         {
@@ -115,7 +92,6 @@ namespace PartnerMatcher.Model
                 checkPassCommand.CommandText = "select count(*) from RegularUsers where Email='" + userName + "' and [Password]='" + password + "'";
                 found = (int)checkUserCommand.ExecuteScalar() != 0;
 
-
                 if (!found)
                 {
                     m_controller.Output("User Name Does Not Exists", "User Name Not Found");
@@ -128,20 +104,17 @@ namespace PartnerMatcher.Model
                 }
                 else // user connected
                 {
-
                     connection.Close();
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 connection.Close();
                 m_controller.Output("Connection problem, try again later", "ERROR");
                 return false;
             }
         }
-
-
 
         /// <summary>
         /// an organized exit from program
@@ -153,16 +126,14 @@ namespace PartnerMatcher.Model
             //     t.Join();
 
             m_controller.Output("BYE BYE!!");
-
-
         }
+
         /// <summary>
         /// Return the fields that exsits in the db
         /// </summary>
         /// <returns> Return the fields that exsits in the db</returns>
         public List<string> getFields()
         {
-
             try
             {
                 connection.Open();
@@ -179,7 +150,7 @@ namespace PartnerMatcher.Model
                 connection.Close();
                 return fields;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 connection.Close();
                 m_controller.Output("Connection problem, try again later", "ERROR");
@@ -217,6 +188,7 @@ namespace PartnerMatcher.Model
                 return null;
             }
         }
+
         /// <summary>
         /// This function retrive all the requests of specific user
         /// </summary>
@@ -247,15 +219,13 @@ namespace PartnerMatcher.Model
                 }
                 connection.Close();
                 return request;
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 connection.Close();
                 m_controller.Output("Connection problem, try again later", "ERROR");
                 return null;
             }
-
         }
 
         /// <summary>
@@ -270,7 +240,6 @@ namespace PartnerMatcher.Model
             {
                 connection.Open();
 
-
                 OleDbCommand uID_fields = new OleDbCommand();
                 uID_fields.Connection = connection;
                 uID_fields.CommandText = "select RegularUsers.ID from RegularUsers where RegularUsers.Email='" + userMail + "'";
@@ -283,7 +252,6 @@ namespace PartnerMatcher.Model
                 cmd_fields.Connection = connection;
                 cmd_fields.CommandText = "select Ads.ID,Ads.Date_Published,Ads.Valid,Ads.FieldName,Ads.FreeDescription from (Ads inner join Recommend on Recommend.AdID = Ads.ID) where (  Recommend.Field='" + field + "'  and Recommend.UserId = " + uid + ")";
 
-
                 OleDbDataReader reader = cmd_fields.ExecuteReader();
                 while (reader.Read())
                 {
@@ -292,9 +260,8 @@ namespace PartnerMatcher.Model
 
                 connection.Close();
                 return recommend;
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 connection.Close();
                 m_controller.Output("Connection problem, try again later", "ERROR");
@@ -304,10 +271,8 @@ namespace PartnerMatcher.Model
 
         public DataTable getCriteriaSerachResults(string tblName, object[] critDat)
         {
-
             try
             {
-
                 connection = new OleDbConnection();
                 connection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=DataSource.accdb; Persist Security Info=False";
                 connection.Open();
@@ -316,7 +281,6 @@ namespace PartnerMatcher.Model
 
                 cmd.CommandText = "select RegularUsers.FirstName,RegularUsers.LastName,Ads.ID," + tblName + ".* from (( Ads inner join " + tblName + " on Ads.ID = " + tblName + ".AdID) inner join UserPubAd on Ads.ID = UserPubAd.AdID) inner join RegularUsers on RegularUsers.ID = UserPubAd.UserID where ((" + tblName + "." + critDat[0] + " = '" + critDat[4] + "' and " + tblName + "." + critDat[1] + " = '" + critDat[5] + "') or (" + tblName + "." + critDat[0] + " = '" + critDat[4] + "' and " + tblName + "." + critDat[2] + " = '" + critDat[6] + "') or (" + tblName + "." + critDat[0] + " = '" + critDat[4] + "' and " + tblName + "." + critDat[3] + " = '" + critDat[7] + "') or (" + tblName + "." + critDat[1] + " = '" + critDat[5] + "' and " + tblName + "." + critDat[2] + " = '" + critDat[6] + "') or (" + tblName + "." + critDat[1] + " = '" + critDat[5] + "' and " + tblName + "." + critDat[3] + " = '" + critDat[7] + "') or (" + tblName + "." + critDat[2] + " = '" + critDat[6] + "' and " + tblName + "." + critDat[3] + " = '" + critDat[7] + "'))";
 
-
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -324,7 +288,7 @@ namespace PartnerMatcher.Model
                 connection.Close();
                 return dt;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 connection.Close();
 
@@ -332,18 +296,15 @@ namespace PartnerMatcher.Model
             }
 
             return null;
-
         }
 
         public DataTable AdSearch(string field)
         {
             try
             {
-
                 connection.Open();
                 OleDbCommand cmd = new OleDbCommand();
                 cmd.Connection = connection;
-
 
                 string tblName = field + "AdDetails";
                 cmd.CommandText = "select RegularUsers.FirstName,RegularUsers.LastName,Ads.ID," + tblName + ".* from (( Ads inner join " + tblName + " on Ads.ID = " + tblName + ".AdID) inner join UserPubAd on Ads.ID = UserPubAd.AdID) inner join RegularUsers on RegularUsers.ID = UserPubAd.UserID";
@@ -356,7 +317,7 @@ namespace PartnerMatcher.Model
 
                 return dt;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 connection.Close();
 
@@ -364,20 +325,6 @@ namespace PartnerMatcher.Model
             }
 
             return null;
-
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
