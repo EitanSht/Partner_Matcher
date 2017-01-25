@@ -14,12 +14,12 @@
         <ImageBrush ImageSource="../Graphics/Green_BG.jpg" />
     </Window.Background>
     <Border BorderBrush="Black" BorderThickness="4">
-        <Grid>
+        <Grid Margin="2,-6,-2,6">
             <Button x:Name="exitButton"
-                    Margin="0,114,0,22"
+                    Margin="-152,162,186,-6"
                     Click="exitButton_Click"
                     Content="Exit"
-                    FontSize="30">
+                    FontSize="25">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="Transparent" />
@@ -65,9 +65,9 @@
                        TextAlignment="Center" />
 
             <Button x:Name="userLogin_Btn"
-                    Width="125"
+                    Width="113"
                     Height="42"
-                    Margin="57,69,0,0"
+                    Margin="51,69,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="#FF0C00FF"
@@ -78,9 +78,9 @@
                     FontWeight="Bold"
                     RenderTransformOrigin="-0.4,0" />
             <Button x:Name="addUserbtn"
-                    Width="125"
+                    Width="113"
                     Height="42"
-                    Margin="201,69,0,0"
+                    Margin="194,68,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="#FF0C00FF"
@@ -93,11 +93,24 @@
 
             <Label x:Name="checkConnection"
                    Height="35"
-                   Margin="227,148,0,0"
+                   Margin="218,167,0,-9"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Content=""
                    Foreground="#FFAEFF00" />
+            <Button x:Name="search_Btn"
+            	Width="180"
+            	Height="35"
+            	Margin="92,122,0,0"
+            	HorizontalAlignment="Left"
+            	VerticalAlignment="Top"
+            	BorderBrush="#FF0C00FF"
+            	BorderThickness="2"
+            	Click="Startsearch_Btn"
+            	Content="Search without login"
+            	FontSize="15"
+            	FontWeight="Bold"
+            	RenderTransformOrigin="-0.4,0" />
         </Grid>
     </Border>
 </Window>

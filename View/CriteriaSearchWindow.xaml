@@ -1,0 +1,222 @@
+﻿<Window x:Class="PartnerMatcher.View.CriteriaSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher.View"
+        mc:Ignorable="d"
+         Title="Search For Partners"
+        Width="600"
+        Height="600"
+        Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="../Graphics/Green_BG.jpg" />
+    </Window.Background>
+    <Border BorderBrush="Black" BorderThickness="4">
+        <Grid Margin="0,0,0,0">
+            <GroupBox x:Name="detailsGroupBox"
+                      Width="535"
+                      Height="120"
+                      Margin="25,41,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      BorderBrush="#FF8AB3CB"
+                      FontWeight="Bold"
+                      Foreground="#FFF5DC64"
+                      Header="Search Details" />
+            <GroupBox x:Name="actions_groupbox"
+                      Width="334"
+                      Height="57"
+                      Margin="126,167,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FontWeight="Bold"
+                      Foreground="#FFF5DC64"
+                      Header="Actions" />
+            <TextBlock Width="590"
+                       Margin="-4,2,-2,0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="Wheat"
+                       Text="Search For Partners"
+                       TextAlignment="Center"
+                       TextDecorations="{x:Null}" />
+            <Button x:Name="exitButton"
+                    Width="584"
+                    Margin="0,493,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="exitButton_Click"
+                    Content="Back"
+                    FontSize="30">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="FontWeight" Value="Normal" />
+                        <Setter Property="Foreground" Value="Red" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Foreground" Value="Red" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Label x:Name="field_lbl"
+                   Margin="186,67,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Field"
+                   FontSize="16"
+                   Foreground="#FFF0DC5A" />
+            <ComboBox x:Name="criteria_0_box"
+                      Width="124"
+                      Margin="38,126,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FontSize="10"
+                      Visibility="Hidden">
+                <ComboBoxItem Content="Select Sub-Criteria"
+                              FontSize="10"
+                              Selector.IsSelected="True" />
+            </ComboBox>
+            <ComboBox x:Name="criteria_1_box"
+                      Width="124"
+                      Margin="171,126,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FontSize="10"
+                      Visibility="Hidden">
+                <ComboBoxItem Content="Select Sub-Criteria"
+                              FontSize="10"
+                              Selector.IsSelected="True" />
+            </ComboBox>
+            <ComboBox x:Name="criteria_2_box"
+                      Width="124"
+                      Margin="299,126,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FontSize="10"
+                      Visibility="Hidden">
+                <ComboBoxItem Content="Select Sub-Criteria"
+                              FontSize="10"
+                              Selector.IsSelected="True" />
+            </ComboBox>
+            <ComboBox x:Name="criteria_3_box"
+                      Width="124"
+                      Margin="427,126,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FontSize="10"
+                      Visibility="Hidden">
+                <ComboBoxItem Content="Select Sub-Criteria"
+                              FontSize="10"
+                              Selector.IsSelected="True" />
+            </ComboBox>
+            <Button x:Name="search_btn"
+                    Width="145"
+                    Height="28"
+                    Margin="291,186,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="search_btn_Click"
+                    Content="Search"
+                    FontSize="16"
+                    FontWeight="Bold" />
+            <Button x:Name="clear_btn"
+                    Width="133"
+                    Height="28"
+                    Margin="145,186,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="clear_btn_Click"
+                    Content="Clear"
+                    FontSize="16"
+                    FontWeight="Bold" />
+            <GroupBox x:Name="results_groupbox"
+                      Width="525"
+                      Height="231"
+                      Margin="36,240,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FontWeight="Bold"
+                      Foreground="#FFF5DC64"
+                      Header="Results"
+                      Visibility="Hidden">
+                <DataGrid x:Name="dataGrid"
+                          Width="505"
+                          Height="210"
+                          Margin="5,0,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Visibility="Hidden" />
+            </GroupBox>
+            <Label x:Name="lblCount"
+                   Width="334"
+                   Margin="126,221,126,92"
+                   HorizontalAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Content="No records found."
+                   FontSize="16"
+                   FontWeight="Bold"
+                   Foreground="#FFE10000"
+                   Visibility="Hidden" />
+            <ComboBox x:Name="field_comboBox"
+                      Width="165"
+                      Height="23"
+                      Margin="245,71,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      DropDownClosed="field_comboBox_DropDownClosed">
+                <ComboBoxItem Content="Select Field" Selector.IsSelected="True" />
+            </ComboBox>
+            <Label x:Name="lbl_0"
+                   Width="124"
+                   Margin="38,104,424,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Background="{x:Null}"
+                   Content=""
+                   Foreground="#FFCCCCCC" />
+            <Label x:Name="lbl_1"
+                   Width="124"
+                   Margin="171,104,291,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Background="{x:Null}"
+                   Content=""
+                   Foreground="#FFCCCCCC" />
+            <Label x:Name="lbl_2"
+                   Width="122"
+                   Margin="300,104,164,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Background="{x:Null}"
+                   Content=""
+                   Foreground="#FFCCCCCC" />
+            <Label x:Name="lbl_3"
+                   Width="123"
+                   Margin="428,104,35,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Background="{x:Null}"
+                   Content=""
+                   Foreground="#FFCCCCCC" />
+        </Grid>
+    </Border>
+</Window>
+

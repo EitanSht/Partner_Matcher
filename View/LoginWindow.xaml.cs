@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PartnerMatcher.Controller;
+using System;
 using System.Data.OleDb;
 using System.Windows;
 
@@ -10,11 +11,14 @@ namespace PartnerMatcher.View
     public partial class LoginWindow : Window
     {
         private OleDbConnection connection;
+        private ICommand m_cmd;
 
-        public LoginWindow()
+        public LoginWindow(ICommand cmd)
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            m_cmd = cmd;
+            //controller.SetView(this);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -22,18 +26,7 @@ namespace PartnerMatcher.View
             // TODO: למה לא להתחבר לשרת ברגע שמעלים את התכנית??
 
 
-            try
-            {
-                connection = new OleDbConnection();
-                connection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=DataSource.accdb; Persist Security Info=False";
-                connection.Open();
-                checkConnection.Content = "- Connection to data base successful";
-                connection.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error: Please download the Microsoft.ACE.OLEDB.12.0 support package", "DataBase Version Error");
-            }
+
         }
 
         private void exitButton_Click(object sender, RoutedEventArgs e)
@@ -52,42 +45,19 @@ namespace PartnerMatcher.View
             {
                 MessageBox.Show(errorMsg, "Missing Details");
             }
-            else
+            else if (m_cmd.DoCommand(userName_txt.Text, password_txt.Password.ToString()))//check if user at system
             {
-                try
-                {
-                    connection.Open();
-                    bool notfound = false;
-
-                    // create a command to check if the username exists
-                    OleDbCommand checkUserCommand = new OleDbCommand();
-                    OleDbCommand checkPassCommand = new OleDbCommand();
-                    checkUserCommand.Connection = connection;
-                    checkPassCommand.Connection = connection;
-                    checkUserCommand.CommandText = "select count(*) from RegularUsers where Email='" + userName_txt.Text + "'";
-                    checkPassCommand.CommandText = "select count(*) from RegularUsers where Email='" + userName_txt.Text + "' and [Password]='" + password_txt.Password.ToString() + "'";
-                    notfound = (int)checkUserCommand.ExecuteScalar() == 0;
-                    if (notfound)
-                        MessageBox.Show("User Name Does Not Exists", "User Name Not Found");
-                    else if ((int)checkPassCommand.ExecuteScalar() == 0)
-                    {
-                        MessageBox.Show("The password is incorrect", "Password Incorrect");
-                    }
-                    else // user connected
-                    {
-                        SearchWindow searchWindow = new SearchWindow(userName_txt.Text);
-                        this.Hide();
-                        searchWindow.ShowDialog();
-                    }
-                    connection.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: \n" + ex.ToString(), "Error Message");
-                    connection.Close();
-                }
+                this.Close();
+                return;
             }
         }
+
+
+
+
+
+
+
 
         private void clear_btn_Click(object sender, RoutedEventArgs e)
         {

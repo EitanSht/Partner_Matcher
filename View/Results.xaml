@@ -1,0 +1,26 @@
+﻿<Window x:Class="PartnerMatcher.View.Results"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher.View"
+        mc:Ignorable="d"
+        Title="Results" Height="400" Width="250">
+    <Grid ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions >
+        <Grid.RowDefinitions
+            >
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions >
+
+        <TextBlock Grid.Column="0" Text="   AD ID   " ></TextBlock>
+        <TextBlock Grid.Column="1" Text="   STATUS  "></TextBlock>
+
+        <ListView Grid.Column="0" Grid.Row="1" x:Name="lv0" ScrollViewer.VerticalScrollBarVisibility="Hidden"  ></ListView>
+        <ListView Grid.Column="1" Grid.Row="1" x:Name="lv1" ScrollViewer.VerticalScrollBarVisibility="Hidden"  ></ListView>
+    </Grid>
+</Window>

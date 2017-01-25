@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using PartnerMatcher.Controller;
+using PartnerMatcher.Model;
+using PartnerMatcher.View;
 using System.Windows;
 
 namespace PartnerMatcher
@@ -13,5 +10,20 @@ namespace PartnerMatcher
     /// </summary>
     public partial class App : Application
     {
+
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            IController c = new MyController();
+            IModel m = new MyModel(c);
+            IView v = new MainWindow(c);
+
+            c.SetView(v);
+            c.SetModel(m);
+            Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
+            Current.MainWindow = (MainWindow)v;
+            v.Start();
+
+        }
     }
 }

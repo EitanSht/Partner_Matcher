@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using PartnerMatcher.Model;
 using PartnerMatcher.View;
 using PartnerMatcher.Controller.Commands;
+using System.Data;
 
 namespace PartnerMatcher.Controller
 {
-    class MyController : IController
+    public class MyController : IController
     {
         private IModel m_model;
         private IView m_view;
@@ -18,9 +19,9 @@ namespace PartnerMatcher.Controller
         public MyController()
         {
             dic_command = new Dictionary<string, ICommand>();
-
-
         }
+
+
 
 
         /// <summary>
@@ -30,10 +31,7 @@ namespace PartnerMatcher.Controller
         public void SetModel(IModel model)
         {
             m_model = model;
-
-
         }
-
 
         /// <summary>
         /// Set view to the controller, set the view commands dictionary
@@ -42,9 +40,13 @@ namespace PartnerMatcher.Controller
         public void SetView(IView view)
         {
             m_view = view;
-            view.GetCommands();
-
         }
+
+        public DataTable AdSearch(string field)
+        {
+            return m_model.AdSearch(field);
+        }
+
 
 
         /// <summary>
@@ -53,12 +55,11 @@ namespace PartnerMatcher.Controller
         /// <returns>commands dictionary</returns>
         public Dictionary<string, ICommand> GetCommands()
         {
-
             #region commandsDeclaration
+            AddUserCommand addUs = new AddUserCommand(m_model, m_view);
+            UserLoginCommand logUs = new UserLoginCommand(m_model, m_view);
+            AdSearchCommand searchAd = new AdSearchCommand(m_model, m_view);
 
-            AddUser addUs = new AddUser(m_model, m_view);
-            UserLogin logUs = new UserLogin(m_model, m_view);
-            AdSearch searchAd = new AdSearch(m_model, m_view);
             #endregion
 
             #region commandDicAddition
@@ -69,10 +70,10 @@ namespace PartnerMatcher.Controller
             //  dic_command.Add(exit.GetName(), exit);
             #endregion
 
-
             return dic_command;
-
         }
+
+
 
 
         /// <summary>
@@ -81,10 +82,33 @@ namespace PartnerMatcher.Controller
         /// <param name="s"> this is the change in the model</param>
         void IController.Output(params string[] s)
         {
-            // m_view.Output(s);
+            m_view.Output(s);
+        }
+
+        public List<string> getFields()
+        {
+            return m_model.getFields();
+        }
+
+        public Dictionary<Tuple<string, string>, string[]> GetCriteria()
+        {
+            return m_model.GetCriteria();
+        }
+
+        public List<string> GetRecommend(string userid, string field)
+        {
+            return m_model.AdRecommend(userid, field);
         }
 
 
+        public List<string> GetRequest(string userid)
+        {
+            return m_model.AdRequests(userid);
+        }
 
+        public DataTable getCriteriaSerachResults(string tblName, object[] critDat)
+        {
+            return m_model.getCriteriaSerachResults(tblName, critDat);
+        }
     }
 }

@@ -7,7 +7,6 @@
         Title="Add a new user"
         Width="600"
         Height="550"
-        Loaded="Window_Loaded"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <Window.Background>
@@ -188,7 +187,7 @@
                     Content="Clear"
                     FontSize="16"
                     FontWeight="Bold" />
-            <PasswordBox x:Name="password_txt"
+            <TextBox x:Name="password_txt"
                          Width="164"
                          Height="23"
                          Margin="272,161,0,0"

@@ -29,7 +29,7 @@ namespace PartnerMatcher.Controller
         /// <param name="param">params to be check</param>
         /// <returns>true if satsified false if not </returns>
         public abstract string checkParams(string[] param);//check the params recieved in Do command
-        public abstract void DoCommand(params string[] parameters);
+        public abstract bool DoCommand(params string[] parameters);
         public abstract string GetName();
     }
 }

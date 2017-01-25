@@ -4,6 +4,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Forms;
 using System.IO;
+using PartnerMatcher.Controller;
+using System.Text.RegularExpressions;
 
 namespace PartnerMatcher.View
 {
@@ -14,13 +16,16 @@ namespace PartnerMatcher.View
     {
         private OleDbConnection connection;
         private string filePath;
+        private ICommand m_comm_AddUser;
 
-        public W_AddUser()
+        public W_AddUser(ICommand comm_AddUser)
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        }
+            m_comm_AddUser = comm_AddUser;
 
+        }
+        /*
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
@@ -35,7 +40,7 @@ namespace PartnerMatcher.View
             {
                 System.Windows.MessageBox.Show("Error: \n" + ex.ToString(), "Error Message");
             }
-        }
+        }*/
 
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -50,6 +55,13 @@ namespace PartnerMatcher.View
         private void clear_btn_Click(object sender, RoutedEventArgs e)
         {
             // clears text boxes
+            ClearFields();
+
+        }
+
+        private void ClearFields()
+        {
+            // clears text boxes
             firstName_txt.Text = String.Empty;
             lastName_txt.Text = String.Empty;
             email_txt.Text = String.Empty;
@@ -61,6 +73,14 @@ namespace PartnerMatcher.View
             filePath = "";
         }
 
+
+
+
+        /// <summary>
+        /// checks user input leagality
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void submit_btn_Click(object sender, RoutedEventArgs e)
         {
             string errorMsg = "";
@@ -70,7 +90,9 @@ namespace PartnerMatcher.View
                 errorMsg += "Please enter a last name";
             if (email_txt.Text.Equals(""))
                 errorMsg += "\nPlease enter an E-Mail address";
-            if (password_txt.Password.ToString().Equals(""))
+            if (!email_txt.Text.Contains('@'))
+                errorMsg += "\nIllegal E-Mail address - format should be like \"name@domain.com\"";
+            if (password_txt.Text.Equals(""))
                 errorMsg += "\nPlease enter a password";
             if (gender_box.Text.Equals("Select Gender"))
                 errorMsg += "\nPlease select a gender";
@@ -78,51 +100,40 @@ namespace PartnerMatcher.View
                 errorMsg += "\nPlease select a birth date";
             if (phoneNumber_txt.Text.Equals(""))
                 errorMsg += "\nPlease enter a phone number";
+            if (!IsPhoneNumber(phoneNumber_txt.Text))
+                errorMsg += "\nPlease enter a phone number";
             if (address_txt.Text.Equals(""))
                 errorMsg += "\nPlease enter an address";
             if (errorMsg.Length > 0)
             {
                 System.Windows.MessageBox.Show(errorMsg, "Missing Details");
             }
+            //if the user input is llegal
             else
             {
-                try
-                {
-                    connection.Open();
-                    bool exists = false;
+                bool succ;
+                succ = m_comm_AddUser.DoCommand(email_txt.Text, firstName_txt.Text, lastName_txt.Text, password_txt.Text, gender_box.Text, date_btn.Text, phoneNumber_txt.Text, address_txt.Text, filePath);
+                if (succ)
+                    ClearFields();
 
-                    // create a command to check if the username exists
-                    OleDbCommand checkCommand = new OleDbCommand();
-                    checkCommand.Connection = connection;
-                    checkCommand.CommandText = "select count(*) from RegularUsers where Email='" + email_txt.Text + "'";
-                    exists = (int)checkCommand.ExecuteScalar() > 0;
 
-                    if (exists)
-                        System.Windows.MessageBox.Show("User Name Already Exists", "Duplication Error");
-                    else
-                    {
-                        string authenticationPass = RandomString(6);
 
-                        OleDbCommand command = new OleDbCommand();
-                        command.Connection = connection;
-                        command.CommandText = "insert into RegularUsers (FirstName,LastName,[Password],Gender,BirthDate,PhoneNumber,Address,AuthenticationPassword,Email) " +
-                            "values ('" + firstName_txt.Text + "','" + lastName_txt.Text + "','" + password_txt.Password.ToString() + "','" + gender_box.Text + "'," +
-                            "'" + date_btn.Text + "','" + phoneNumber_txt.Text + "','" + address_txt.Text + "','" + authenticationPass + "','" + email_txt.Text + "')";
-                        command.ExecuteNonQuery();
-                        if (File.Exists(filePath))
-                        {
-                            File.Copy(filePath, ".\\CV\\" + email_txt.Text + ".doc");
-                        }
-                        System.Windows.MessageBox.Show("New user added", "Submitted Successfully");
-                    }
-                    connection.Close();
-                }
-                catch (Exception ex)
-                {
-                    System.Windows.MessageBox.Show("Error: \n" + ex.ToString(), "Error Message");
-                    connection.Close();
-                }
+
+
+
+
+
             }
+
+        }
+
+
+
+
+
+        public static bool IsPhoneNumber(string number)
+        {
+            return (Regex.Match(number, @"^(0\d-\d{7})$").Success || Regex.Match(number, @"^(0\d{2}-\d{7})$").Success);
         }
 
         // Creates a random authentication password
@@ -133,6 +144,13 @@ namespace PartnerMatcher.View
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+
+
+
+
+
+
 
         private void uploadCV_btn_Click(object sender, RoutedEventArgs e)
         {

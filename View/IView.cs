@@ -2,12 +2,12 @@
 
 namespace PartnerMatcher.View
 {
-    interface IView
+    public interface IView
     {
-
         void Start();
         void Output(params string[] output);
-        void setcontroller(IController controller);
-        void GetCommands();
+        void SetController(IController controller);
+        void setCurUser(string user);
+
     }
 }

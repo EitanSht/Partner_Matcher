@@ -1,0 +1,33 @@
+﻿<Window x:Class="PartnerMatcher.View.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher.View"
+        mc:Ignorable="d"
+        Title="Menu" Height="347" Width="494">
+    <Window.Background>
+        <ImageBrush ImageSource="../Graphics/Green_BG.jpg" />
+    </Window.Background>
+    <Border BorderBrush="Black" BorderThickness="4">
+        <Grid Margin="-164,-92,164,92">
+            <Button x:Name="GSearch" Content="General Search" HorizontalAlignment="Left" Margin="215,133,0,0" VerticalAlignment="Top" Width="140" Height="55" Click="GSearch_Click"/>
+            <Button x:Name="AdRequests" Content="Ad Requests" HorizontalAlignment="Left" Margin="215,218,0,0" VerticalAlignment="Top" Width="140" Height="55" Click="AdRequests_Click"/>
+            <Button x:Name="RecommendList" Content="Recommend List" HorizontalAlignment="Left" Margin="410,218,-147,0" VerticalAlignment="Top" Width="140" Height="55" Click="RecommendList_Click"/>
+            <Button x:Name="CSearch" Content="Search by Criteria" HorizontalAlignment="Left" Margin="410,131,-142,0" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.5,0.5" Height="57" Click="CSearch_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.109"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+
+
+        </Grid>
+    </Border>
+
+</Window>

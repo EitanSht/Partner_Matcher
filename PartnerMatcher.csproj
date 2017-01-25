@@ -57,18 +57,48 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\ACommand.cs" />
-    <Compile Include="Controller\Commands\AdSearch.cs" />
-    <Compile Include="Controller\Commands\AddUser.cs" />
-    <Compile Include="Controller\Commands\UserLogin.cs" />
+    <Compile Include="Controller\Commands\AdSearchCommand.cs" />
+    <Compile Include="Controller\Commands\AddUserCommand.cs" />
+    <Compile Include="Controller\Commands\IAdSearch.cs" />
+    <Compile Include="Controller\Commands\IUserLogin.cs" />
+    <Compile Include="Controller\Commands\UserLoginCommand.cs" />
     <Compile Include="Controller\ICommand.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Controller\MyController.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Model\MyModel.cs" />
+    <Compile Include="View\CriteriaSearchWindow.xaml.cs">
+      <DependentUpon>CriteriaSearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\IView.cs" />
+    <Compile Include="View\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Recommend.xaml.cs">
+      <DependentUpon>Recommend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Results.xaml.cs">
+      <DependentUpon>Results.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SearchWindow.xaml.cs">
       <DependentUpon>SearchWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\CriteriaSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Recommend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Results.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\W_AddUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -83,27 +83,12 @@
                       Foreground="#FFF5DC64"
                       Header="Search Details" />
             <Label x:Name="field_lbl"
-                   Margin="141,64,0,0"
+                   Margin="269,60,0,0"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Content="Field"
                    FontSize="16"
                    Foreground="#FFF0DC5A" />
-            <Label x:Name="location_lbl"
-                   Margin="141,95,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Location"
-                   FontSize="16"
-                   Foreground="#FFF0DC5A"
-                   RenderTransformOrigin="0.726,2.355" />
-            <ComboBox x:Name="location_box"
-                      Width="165"
-                      Margin="271,101,0,0"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top">
-                <ComboBoxItem Content="Select Location" Selector.IsSelected="True" />
-            </ComboBox>
             <Button x:Name="search_btn"
                     Width="145"
                     Height="28"
@@ -151,11 +136,11 @@
                    FontSize="16"
                    FontWeight="Bold"
                    Foreground="#FFE10000"
-                   Visibility="Hidden" />
+                   Visibility="Visible" />
             <ComboBox x:Name="field_comboBox"
                       Width="165"
                       Height="23"
-                      Margin="271,67,0,0"
+                      Margin="219,95,0,0"
                       HorizontalAlignment="Left"
                       VerticalAlignment="Top">
                 <ComboBoxItem Content="Select Field" Selector.IsSelected="True" />
